@@ -1,7 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>ryancheung</Authors>
+    <PackageProjectUrl>https://github.com/ryancheung/MonoGame.DisplayModeHelper</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>
