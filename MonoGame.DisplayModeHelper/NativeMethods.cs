@@ -75,11 +75,16 @@ namespace MonoGame.DisplayModeHelper
         public const int DISP_CHANGE_BADFLAGS = -4;
         public const int DISP_CHANGE_BADPARAM = -5;
         public const int DISP_CHANGE_BADDUALVIEW = -6;
+        public const int SM_CXSCREEN = 0;
+        public const int SM_CYSCREEN = 1;
 
         [DllImport("user32.dll")]
         public static extern int EnumDisplaySettings(string deviceName, int modeNum, ref DEVMODE1 devMode);
 
         [DllImport("user32.dll")]
         public static extern int ChangeDisplaySettings(ref DEVMODE1 devMode, int flags);
+
+        [DllImport("user32.dll")]
+        public static extern int GetSystemMetrics(int nIndex);
     }
 }

@@ -6,11 +6,29 @@ namespace MonoGame.DisplayModeHelper
 {
     public class DisplayModes
     {
+        public struct Size
+        {
+            public int Width;
+            public int Height;
+        }
+
         public static Dictionary<string, DEVMODE1> SupportedDisplayModes = new Dictionary<string, DEVMODE1>();
 
         static DisplayModes()
         {
             InitializeSupportedDisplayModes();
+        }
+
+        public static Size CurrentResolution
+        {
+            get
+            {
+                return new Size
+                {
+                    Width = NativeMethods.GetSystemMetrics(NativeMethods.SM_CXSCREEN),
+                    Height = NativeMethods.GetSystemMetrics(NativeMethods.SM_CYSCREEN)
+                };
+            }
         }
 
         private static void InitializeSupportedDisplayModes()
